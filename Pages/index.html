@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>lightSlider Demo</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!--Styles-->
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../Content/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
+    <link href="../Styles/BreadCrumb.css" rel="stylesheet" type="text/css" />
+    <!--    <link href="../Styles/Slider/Slider.css" rel="stylesheet" type="text/css" />-->
+    <link href="../Styles/Slider/demo.css" rel="stylesheet" type="text/css" />
+    <link href="../Styles/Slider/flexslider.css" rel="stylesheet" type="text/css" />
+    <!--Scripts-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js" type="text/javascript"></script>
+    <!-- <script src="../Scripts/Slider/jssor.slider.mini.js" type="text/javascript"></script>
+    <script src="../Scripts/Slider/JsSlider.js" type="text/javascript"></script>-->
+    <script src="../Scripts/BreadCrumb.js" type="text/javascript"></script>
+    <script src="../Scripts/jquery.elevatezoom.js" type="text/javascript"></script>
+    <script src="../Scripts/Slider/jquery.flexslider.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        $(window).load(function () {
+            $('.flexslider').flexslider({
+                animation: "slide",
+                controlNav: "thumbnails",
+                start: function (slider) {
+                    // include loader if needed
+                    // $('body').removeClass('loading');
+                }
+            });
+        });
+
+        $(document).ready(function () {
+            bindEventToNavigation();
+
+            showBreadCrumb(); //Show the breadcrumb when you arrive on the new page
+
+            // Zoom effect
+            $("#UlSlides > li > img").click(function () {
+                $("#UlSlides > li > img").elevateZoom({ tint: false, tintColour: '#F90', tintOpacity: 0.5, responsive: true, lensSize: 100 });
+            });
+
+            //            $("#divImgSlide > div > img").click(function () {
+            //                var classname = $(this)[0].className;
+
+            //                $('#divImgSlide > div').each(function (index, value) {
+
+            //                    $(this).children().removeClass('imgSlide');
+
+            //                });
+
+            //                if (classname == "imgSlide") {
+            //                }
+            //                else {
+            //                    $(this).addClass('imgSlide');
+            //                    $("#divImgSlide > div > .imgSlide").elevateZoom({ tint: false, tintColour: '#F90', tintOpacity: 0.5, responsive: true, lensSize: 200 });
+            //                }
+
+            //            });
+
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- Bread Crumbs -->
+        <!-- /.row -->
+        <!-- Portfolio Item Row -->
+        <div class="row">
+            <div class="col-md-8">
+                <!--  <div class="col-lg-12">-->
+                <ol class="breadcrumb" id="navigation_links">
+                    <li><a href="#">Home</a> </li>
+                    <li><a href="#">Library</a> </li>
+                    <li class="active">Data</li>
+                </ol>
+            </div>
+            <div id="main" role="main" class="col-md-6">
+                <section class="slider">
+        <div class="flexslider">
+          <ul class="slides" id="UlSlides">
+            <li data-thumb="../Images/Slide/small/image1.png">
+  	    	    <img src="../Images/Slide/small/image1.png" data-zoom-image="../Images/Slide/large/image1.jpg"/>
+  	    		</li>
+  	    		<li data-thumb="../Images/Slide/small/image2.png">
+  	    	    <img src="../Images/Slide/small/image2.png" data-zoom-image="../Images/Slide/large/image2.jpg"/>
+  	    		</li>
+  	    		<li data-thumb="../Images/Slide/small/image3.png">
+  	    	    <img src="../Images/Slide/small/image3.png" data-zoom-image="../Images/Slide/large/image3.jpg"/>
+  	    		</li>
+  	    		<li data-thumb="../Images/Slide/small/image3.png">
+  	    	    <img src="../Images/Slide/small/image4.png" data-zoom-image="../Images/Slide/large/image4.jpg"/>
+  	    		</li>
+          </ul>
+        </div>
+      </section>
+            </div>
+            <div class="col-md-4">
+                <h3>
+                    Project Description</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio,
+                    gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing
+                    et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p>
+            </div>
+        </div>
+    </div>
+</body>

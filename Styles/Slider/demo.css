@@ -1,0 +1,35 @@
+ 
+.slider
+{
+     
+}   
+  
+#main
+{
+    
+    overflow: hidden;
+}
+aside h3
+{
+    float: left;
+}
+
+ 
+nav li
+{
+    margin: 0 0 7px;
+    font-size: 15px;
+}
+nav li a:hover, nav li.active a
+{
+    border-bottom: 1px dotted #fff;
+    border-bottom: 1px dotted rgba(255,255,255,0.3);
+    background: none;
+}
+nav li.active a
+{
+    cursor: default;
+}
+
+ 
+ 
